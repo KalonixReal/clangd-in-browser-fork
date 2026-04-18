@@ -66,7 +66,7 @@ self_.addEventListener("activate", (event) => {
 
 self_.addEventListener("install", (event) => {
   event.waitUntil(
-    addResourcesToCache(["/wasm/clangd.js", "/wasm/clangd.wasm"])
+    addResourcesToCache(["/wasm/clangd.js", "https://github.com/KalonixReal/clangd-in-browser-fork/releases/download/v1/clangd.wasm"])
   );
 });
 
