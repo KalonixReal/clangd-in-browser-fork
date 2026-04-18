@@ -111,6 +111,47 @@ const flags = [
 ];
 
 clangd.FS.writeFile(FILE_PATH, "");
+
+// Add bits/stdc++.h
+clangd.FS.mkdir("/usr/include/bits");
+clangd.FS.writeFile("/usr/include/bits/stdc++.h", `#pragma once
+#include <algorithm>
+#include <array>
+#include <bitset>
+#include <cassert>
+#include <climits>
+#include <cmath>
+#include <complex>
+#include <cstdint>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <deque>
+#include <functional>
+#include <iomanip>
+#include <iostream>
+#include <iterator>
+#include <list>
+#include <map>
+#include <memory>
+#include <numeric>
+#include <optional>
+#include <queue>
+#include <random>
+#include <set>
+#include <sstream>
+#include <stack>
+#include <string>
+#include <string_view>
+#include <tuple>
+#include <type_traits>
+#include <unordered_map>
+#include <unordered_set>
+#include <utility>
+#include <variant>
+#include <vector>
+`);
+
 clangd.FS.writeFile(
   `${WORKSPACE_PATH}/.clangd`,
   JSON.stringify({ CompileFlags: { Add: flags } })
