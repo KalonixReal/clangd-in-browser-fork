@@ -7,7 +7,7 @@ import { BrowserMessageReader, BrowserMessageWriter} from "vscode-languageserver
 declare var self: DedicatedWorkerGlobalScope;
 
 const wasmBase = `${import.meta.env.BASE_URL}wasm/`;
-const wasmUrl = `${wasmBase}clangd.wasm`;
+const wasmUrl = `https://github.com/KalonixReal/clangd-in-browser-fork/releases/download/v1/clangd.wasm`;
 const jsModule = import(  /* @vite-ignore */ `${wasmBase}clangd.js`);
 
 // Pre-fetch wasm, and report progress to main
