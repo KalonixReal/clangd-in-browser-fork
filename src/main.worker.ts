@@ -6,9 +6,9 @@ import { BrowserMessageReader, BrowserMessageWriter} from "vscode-languageserver
 
 declare var self: DedicatedWorkerGlobalScope;
 
-const wasmBase = `https://clangd.guyutongxue.site/wasm/`;
-const wasmUrl = `${wasmBase}clangd.wasm`;
-const jsModule = import(  /* @vite-ignore */ `${wasmBase}clangd.js`);
+const wasmBase = `${import.meta.env.BASE_URL}wasm/`;
+const wasmUrl = `https://clangd.guyutongxue.site/wasm/clangd.wasm`;
+const jsModule = import(/* @vite-ignore */ `${wasmBase}clangd.js`);
 
 // Pre-fetch wasm, and report progress to main
 const wasmResponse = await fetch(wasmUrl);
