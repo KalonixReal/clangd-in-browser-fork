@@ -29,6 +29,6 @@ export default defineConfig({
   },
   define: {
     // Server-provided Content-Length header may be gzipped, get the real size in build time
-    __WASM_SIZE__: fs.statSync("public/wasm/clangd.wasm").size,
+    __WASM_SIZE__: fs.statSync("https://github.com/KalonixReal/clangd-in-browser-fork/releases/download/v1/clangd.wasm").size,
   },
 });
