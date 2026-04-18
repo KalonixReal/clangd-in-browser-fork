@@ -153,12 +153,20 @@ export const createEditor = async (
   await wrapper.initAndStart(userConfig, element!);
   const editorInstance = wrapper.getEditor()!;
 
-  setEditorValueSource(
+setEditorValueSource(
     () => editorInstance.getValue(),
     (value) => editorInstance.setValue(value)
   );
+
+  // Seamless sync: broadcast every code change to the parent frame
+  editorInstance.onDidChangeModelContent(() => {
+    globalThis.parent.postMessage(
+      { cdib: "1.0.0", type: "codeChange", code: editorInstance.getValue() },
+      "*"
+    );
+  });
+
   return editorInstance;
-};
 
 function getUserConfigurationJson(): string {
   return JSON.stringify({
