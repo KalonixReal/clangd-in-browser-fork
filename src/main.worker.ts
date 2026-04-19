@@ -233,7 +233,7 @@ clangd.FS.writeFile("/usr/include/bits/stdc++.h", `// C++ includes used for prec
 
 clangd.FS.writeFile(
   `${WORKSPACE_PATH}/.clangd`,
-  `Index:\n  Background: Skip\nCompletion:\n  AllScopes: false\nCompileFlags:\n  Add: [${flags.map(f => `"${f}"`).join(', ')}]\n`
+  JSON.stringify({ CompileFlags: { Add: flags } })
 );
 
 function startServer() {
