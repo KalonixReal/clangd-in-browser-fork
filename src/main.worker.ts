@@ -112,7 +112,7 @@ clangd.FS.writeFile(FILE_PATH, "");
 
 // Add bits/stdc++.h
 clangd.FS.mkdir("/usr/include/bits");
-clangd.FS.writeFile("/usr/include/bits/stdc++.h", `
+clangd.FS.writeFile("/usr/include/bits/stdc++.h", `// C
 #include <cstdint>
 #include <cstddef>
 #include <cstdio>
@@ -122,59 +122,42 @@ clangd.FS.writeFile("/usr/include/bits/stdc++.h", `
 
 // C++
 #include <algorithm>
+#include <array>
+#include <atomic>
 #include <bitset>
-#include <complex>
+#include <chrono>
 #include <deque>
 #include <exception>
-#include <fstream>
+#include <forward_list>
 #include <functional>
+#include <initializer_list>
 #include <iomanip>
-#include <ios>
-#include <iosfwd>
 #include <iostream>
 #include <istream>
 #include <iterator>
 #include <limits>
 #include <list>
-#include <locale>
 #include <map>
 #include <memory>
 #include <new>
 #include <numeric>
 #include <ostream>
 #include <queue>
+#include <random>
+#include <ratio>
+#include <regex>
 #include <set>
 #include <sstream>
 #include <stack>
 #include <stdexcept>
-#include <streambuf>
 #include <string>
-#include <typeinfo>
-#include <utility>
-#include <valarray>
-#include <vector>
-
-#if __cplusplus >= 201103L
-#include <array>
-#include <atomic>
-#include <chrono>
-#include <condition_variable>
-#include <forward_list>
-#include <future>
-#include <initializer_list>
-#include <mutex>
-#include <random>
-#include <ratio>
-#include <regex>
-#include <scoped_allocator>
-#include <system_error>
-#include <thread>
 #include <tuple>
-#include <typeindex>
 #include <type_traits>
+#include <typeinfo>
 #include <unordered_map>
 #include <unordered_set>
-#endif
+#include <utility>
+#include <vector>
 `);
 
 clangd.FS.writeFile(
