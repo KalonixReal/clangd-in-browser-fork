@@ -113,76 +113,35 @@ clangd.FS.writeFile(FILE_PATH, "");
 // Add bits/stdc++.h
 clangd.FS.mkdir("/usr/include/bits");
 clangd.FS.writeFile("/usr/include/bits/stdc++.h", `#pragma once
-// C
-#include <cassert>
-#include <cctype>
-#include <cerrno>
-#include <cfloat>
-#include <climits>
-#include <clocale>
-#include <cmath>
-#include <csetjmp>
-#include <csignal>
-#include <cstdarg>
-#include <cstddef>
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
-#include <ctime>
-#include <cwchar>
-#include <cwctype>
-// C++11
-#include <cfenv>
-#include <cinttypes>
-#include <cstdint>
-// C++
 #include <algorithm>
 #include <array>
 #include <bitset>
-#include <complex>
+#include <cassert>
+#include <cctype>
+#include <climits>
+#include <cmath>
+#include <cstdint>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 #include <deque>
-#include <exception>
-#include <forward_list>
-#include <fstream>
 #include <functional>
 #include <iomanip>
-#include <ios>
-#include <iosfwd>
 #include <iostream>
-#include <istream>
 #include <iterator>
-#include <limits>
-#include <list>
-#include <locale>
 #include <map>
-#include <memory>
-#include <new>
 #include <numeric>
-#include <ostream>
 #include <queue>
 #include <random>
-#include <regex>
 #include <set>
 #include <sstream>
 #include <stack>
-#include <stdexcept>
-#include <streambuf>
 #include <string>
 #include <tuple>
-#include <type_traits>
-#include <typeinfo>
 #include <unordered_map>
 #include <unordered_set>
 #include <utility>
-#include <valarray>
 #include <vector>
-// C++17
-#include <any>
-#include <charconv>
-#include <filesystem>
-#include <optional>
-#include <string_view>
-#include <variant>
 `);
 
 clangd.FS.writeFile(
@@ -192,7 +151,12 @@ clangd.FS.writeFile(
 
 function startServer() {
   console.log("%c%s", "font-size: 2em; color: green", "clangd started");
-  clangd.callMain([]);
+  clangd.callMain([
+    '--background-index=0',
+    '--malloc-trim',
+    '--limit-results=20',
+    '--max-workers=1',
+  ]);
 }
 startServer();
 
