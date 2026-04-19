@@ -153,7 +153,6 @@ clangd.FS.writeFile("/usr/include/bits/stdc++.h", `// C++ includes used for prec
 #include <climits>
 #include <clocale>
 #include <cmath>
-#include <csetjmp>
 #include <csignal>
 #include <cstdarg>
 #include <cstddef>
