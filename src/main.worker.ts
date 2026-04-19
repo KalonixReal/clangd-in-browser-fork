@@ -109,7 +109,7 @@ const flags = [
 ];
 
 clangd.FS.writeFile(FILE_PATH, "");
-
+/*
 // Add bits/stdc++.h
 clangd.FS.mkdir("/usr/include/bits");
 clangd.FS.writeFile("/usr/include/bits/stdc++.h", `#pragma once
@@ -143,7 +143,7 @@ clangd.FS.writeFile("/usr/include/bits/stdc++.h", `#pragma once
 #include <utility>
 #include <vector>
 `);
-
+*/
 clangd.FS.writeFile(
   `${WORKSPACE_PATH}/.clangd`,
   JSON.stringify({ CompileFlags: { Add: flags } })
