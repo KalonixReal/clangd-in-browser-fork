@@ -153,7 +153,6 @@ function startServer() {
   console.log("%c%s", "font-size: 2em; color: green", "clangd started");
   clangd.callMain([
     '--background-index=0',
-    '--malloc-trim',
     '--limit-results=20',
     '--max-workers=1',
   ]);
